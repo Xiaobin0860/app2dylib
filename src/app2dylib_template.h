@@ -46,7 +46,7 @@ void app2dylib(NSString *inpath, NSString * outpath){
     
     CDMachOFile * machOFile = (CDMachOFile *)ofile;
     CDLCSegment * pagezeroSeg = [machOFile segmentWithName:@"__PAGEZERO"];
-    [machOFile.dyldInfo performSelector:@selector(logRebaseInfo)];
+    [machOFile.dyldInfo logRebaseInfo];
     
     auto seg_cmd = (segment_command_t *)((char *)outData.mutableBytes + pagezeroSeg.commandOffset);
     const uint64 PAGEZERO_SIZE_DELTA  = seg_cmd -> vmsize - PAGEZERO_SIZE_AFTER_MODIFY;

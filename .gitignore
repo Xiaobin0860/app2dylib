@@ -43,6 +43,9 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+**/xcshareddata
+**/xcuserdata
+**/*.xcuserdatad
 
 # generated files
 bin/
